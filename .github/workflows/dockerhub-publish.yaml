@@ -28,4 +28,4 @@ jobs:
             GIT_TAG=v1.0.0
           tags: |
             hteppl/4vps-billing:latest
-            hteppl/4vps-billing:v1.0.0
+            hteppl/4vps-billing:v1.1.0
