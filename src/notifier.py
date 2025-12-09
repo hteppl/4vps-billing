@@ -18,12 +18,13 @@ class TelegramNotifier:
 
     def _get_daily_payments(self, servers: list[Server]) -> dict[str, float]:
         now = datetime.now(self.config.timezone)
-        cutoff = now + timedelta(days=self.config.prediction_days)
+        today = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        cutoff = today + timedelta(days=self.config.prediction_days)
 
         daily: dict[datetime, float] = {}
         for server in servers:
             expired_aware = server.expired.replace(tzinfo=self.config.timezone)
-            if expired_aware <= cutoff:
+            if today <= expired_aware < cutoff:
                 day = expired_aware.replace(hour=0, minute=0, second=0, microsecond=0)
                 daily[day] = daily.get(day, 0) + server.price
 
