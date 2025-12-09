@@ -1,0 +1,12 @@
+services:
+  4vps-billing:
+    image: hteppl/4vps-billing:latest
+    container_name: 4vps-billing
+    restart: unless-stopped
+    env_file:
+      - .env
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
