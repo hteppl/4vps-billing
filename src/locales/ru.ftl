@@ -3,7 +3,7 @@ balance-current = Текущий баланс: <b>{$balance} ₽</b>
 
 predictions-title = 📅 <b>Изменения баланса ({$days} дн.):</b>
 predictions-day = • {$date}: <b>{$amount} ₽</b> → {$remaining} ₽
-predictions-total = Итого: <b>-{$total} ₽</b>
+predictions-total = 💳 Итого: <b>-{$total} ₽</b>
 predictions-none = ✅ Нет платежей в ближайшие {$days} дней
 
 warning-insufficient = ⚠️ <b>Недостаточно средств {$date}!</b>
